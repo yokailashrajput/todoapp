@@ -3,9 +3,13 @@ import Feather from "@expo/vector-icons/Feather";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { LinearGradient } from "expo-linear-gradient";
+import { router } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 
 export default function App() {
+  function gotoalltask(){
+    router.push("/alltask")
+  }
   return (
     <LinearGradient
       colors={[
@@ -32,10 +36,10 @@ export default function App() {
       </View>
       <View style={[styles.borderc, styles.ajcc, styles.datetime]}>
         <View style={[styles.todaydate, styles.ajcc]}>
-          <Text style={{ fontSize: 40 }}>Date</Text>
+          <Text style={{ fontSize: 40 ,color:"white" }}>Date</Text>
         </View>
         <View style={[styles.ajcc, styles.time]}>
-          <Text style={{ fontSize: 40 }}>Time</Text>
+          <Text style={{ fontSize: 40,color:"white" }}>Time</Text>
         </View>
       </View>
       <View style={[styles.borderc, styles.ajcc, styles.nvbar]}>
@@ -56,7 +60,7 @@ export default function App() {
       <View style={[styles.borderc, styles.ajcc, styles.addnew]}>
         <View style={[styles.ajcc,styles.addnewbtn]}>
 
-        <FontAwesome6 name="add" size={55} color="white"  />
+        <FontAwesome6 name="add" size={55} color="white"  onPress={gotoalltask}/>
         </View>
       </View>
     </LinearGradient>
@@ -113,6 +117,7 @@ const styles = StyleSheet.create({
     // borderWidth: 2,
     height: 100,
     width: 250,
+    color:"white",
     fontSize: 40,
   },
   time: {
@@ -124,6 +129,7 @@ const styles = StyleSheet.create({
   nvbar: {
     height: 120,
     flexDirection: "row",
+    backgroundColor:"white"
   },
   allcontiner: {
     // borderColor: "red",
